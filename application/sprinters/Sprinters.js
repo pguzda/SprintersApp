@@ -4,8 +4,8 @@ function Sprinters($scope, $http, JSONservice) {
 	
 	$scope.edited;
 	
-	var sprintersJsonPath = '/models/sprinters.json',
-		sprintersdetJsonPath = '/models/sprinters-details.json';
+	var sprintersJsonPath = basepath + '/models/sprinters.json',
+		sprintersdetJsonPath = basepath + '/models/sprinters-details.json';
 	
 	$scope.init = function() {
 	
@@ -84,13 +84,13 @@ function Sprinters($scope, $http, JSONservice) {
 		
 		// Save data in JSON file
 		// --Name
-		JSONservice.writeContent('/models/savedata-name.php', jsondata).then(function(res) {
+		JSONservice.writeContent(basepath + '/models/savedata-name.php', jsondata).then(function(res) {
 			// Reload files (refresh data)
 			$scope.getSprinters(idSprinter);
 			$scope.edited = null;
 		});
 		// --Details
-		JSONservice.writeContent('/models/savedata.php', jsondatadetails).then(function(res) {
+		JSONservice.writeContent(basepath + '/models/savedata.php', jsondatadetails).then(function(res) {
 			// Reload files (refresh data)
 			$scope.getSprinters(idSprinter);
 			$scope.edited = null;

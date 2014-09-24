@@ -1,3 +1,6 @@
+// Global variables
+var basepath = '/talentoday/sprinters';
+
 /* -----------------------------
  * Application Module
  * ----------------------------- */
@@ -12,7 +15,7 @@ var SprintersApp = angular.module('Sprinters',[
  * ----------------------------- */
 SprintersApp.config(function ($routeProvider, $locationProvider, $httpProvider) {
 	$routeProvider.
-		when('/', {templateUrl: '/application/home/index.html', title: 'Home'}).
+		when('/', {templateUrl: basepath + '/application/home/index.html', title: 'Home'}).
 		otherwise({redirectTo: '/'});
 
 	$locationProvider.html5Mode(true);
