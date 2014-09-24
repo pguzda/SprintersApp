@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="Sprinters">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		
+		<title>Sprinters App</title>
+		
+		<!-- CSS - Vendors -->
+		<link rel="stylesheet" href="/vendors/bootstrap/dist/css/bootstrap.css">
+
+		<!-- CSS - App -->
+		<link rel="stylesheet" href="/assets/styles/css/app.css">
+		
+		<!-- Scripts - Vendors -->
+		<script type="text/javascript" src="/vendors/jquery/dist/jquery.js"></script>
+		<script type="text/javascript" src="/vendors/angular/angular.js"></script>
+		<script type="text/javascript" src="/vendors/angular-route/angular-route.js"></script>
+		<script type="text/javascript" src="/vendors/angular-resource/angular-resource.js"></script>
+		<script type="text/javascript" src="/vendors/bootstrap/dist/js/bootstrap.js"></script>
+		<script type="text/javascript" src="/vendors/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js"></script>
+		
+		<!-- Scripts - App -->
+		<script type="text/javascript" src="/app.js"></script>
+		<script type="text/javascript" src="/application/sprinters/Sprinters.js"></script>
+		<script type="text/javascript" src="/utils/services.js"></script>
+		<!-- Scripts - App - Utils -->
+		
+		
+		<!-- Scripts - Global -->
+	</head>
+	
+	<body>
+		
+		<!-- No JS -->
+		<noscript>
+			<div class="noscript">
+				<div class="warning"></div>
+				This website requires <strong>JavaScript</strong> activated to run.<br>
+				Please activate it in your browser settings.
+			</div>
+		</noscript>
+		<!-- / No JS -->
+		
+		
+		
+		<!-- Header -->
+		<div ng-include="'/application/header.html'"></div>		
+		
+		
+		<!-- Content -->
+		<div ng-include="'/application/content.html'"></div>
+		
+		<!-- Footer -->
+		<div ng-include="'/application/footer.html'"></div>
+		
+	</body>
+</html>

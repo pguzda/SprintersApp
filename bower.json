@@ -1,0 +1,16 @@
+{
+  "name": "SprintersApp",
+  "version": "1.0.0",
+  "authors": [
+    "Paul GR <paulguzdariviere@gmail.com>"
+  ],
+  "license": "All Rights Reserved.",
+  "dependencies": {
+    "bootstrap": "~3.1.1",
+    "jquery": "~2.1.1",
+    "angular": "~1.2.18",
+    "angular-route": "~1.2.25",
+    "angular-ui-bootstrap-bower": "~0.11.0",
+    "angular-resource": "~1.2.25"
+  }
+}

@@ -1,0 +1,90 @@
+<div class="wrap-content">
+			
+	<h1 class="sprinters-list-title">Sprinters list</h1>
+
+	<div class="sprinters-list-content" ng-controller="Sprinters" ng-init="init()">
+		
+		<!-- Letters -->
+		<div class="letters-list">
+			<span class="letter" ng-repeat="letter in letters" ng-click="sortByLetter(letter)">{{letter}}</span>
+		</div>
+		<!-- / Letters -->
+		
+		<!-- Sprinters list -->
+		<accordion>
+			<accordion-group class="sprinter-item" ng-repeat="sprinter in sprintersdata" heading="{{sprinter.name}}" is-open="sprinter.open" id="sprinter-{{sprinter.id}}">
+			
+		    	<!-- Sprinter details -->
+		    	<div ng-show="edited != sprinter.id">
+			    	<div class="row" id="details-{{sprinter.id}}">
+			    		<div class="col-md-4 details">
+			    			<!-- detail: birthdate -->
+			    			<p><strong>Birthdate</strong> {{sprinter.details.birthdate_m}}-{{sprinter.details.birthdate_d}}-{{sprinter.details.birthdate_y}}</p>
+			    			<!-- detail: address -->
+			    			<p><strong>Address</strong> {{sprinter.details.address}}</p>
+			    			<!-- detail: phone number -->
+			    			<p><strong>Phone number</strong> {{sprinter.details.phone}}</p>
+			    		</div>
+			    		<div class="col-md-8 description">
+			    			<!-- detail: description -->
+			    			<strong>Description</strong>
+			    			<p>{{sprinter.details.description}}</p>
+			    		</div>
+			    	</div>
+			    	
+			    	<div class="row edit">
+			    		<span class="btn btn-primary" ng-click="editDetails(sprinter.id)">Edit details</span>
+			    	</div>
+			    </div>
+			    <!-- / Sprinter details -->
+			    
+			    
+			    
+			    <!-- Sprinter details (EDIT) -->
+			    <div ng-show="edited == sprinter.id">
+			    	<div class="row" id="details-{{sprinter.id}}">
+			    		<div class="col-md-4 details">
+			    			<!-- detail: name -->
+			    			<p><strong>Name</strong>
+			    				<input type="text" value="{{sprinter.name}}" class="field-large field-name" ng-model="sprinter.name" placeholder="Name">
+			    			</p>
+			    			<!-- detail: birthdate -->
+			    			<p><strong>Birthdate</strong>
+			    				<input type="text" value="{{sprinter.details.birthdate_m}}" class="field-nb field-nb-2 field-bd-m" placeholder="MM" maxlength="2" ng-model="sprinter.details.birthdate_m"> -
+			    				<input type="text" value="{{sprinter.details.birthdate_d}}" class="field-nb field-nb-2 field-bd-d" placeholder="DD" maxlength="2" ng-model="sprinter.details.birthdate_d"> -
+			    				<input type="text" value="{{sprinter.details.birthdate_y}}" class="field-nb field-nb-4 field-bd-y" placeholder="YYYY" maxlength="4" ng-model="sprinter.details.birthdate_y">
+			    			</p>
+			    			<!-- detail: address -->
+			    			<p><strong>Address</strong>
+			    				<input type="text" value="{{sprinter.details.address}}" class="field-large field-address" ng-model="sprinter.details.address">
+			    			</p>
+			    			<!-- detail: phone number -->
+			    			<p><strong>Phone number</strong>
+			    				<input type="text" value="{{sprinter.details.phone}}" class="field-nb field-nb-12 field-phone" maxlength="12" ng-model="sprinter.details.phone"></p>
+			    		</div>
+			    		<div class="col-md-8 description">
+			    			<!-- detail: description -->
+			    			<strong>Description</strong>
+			    			<p>
+			    				<textarea class="field-ta field-ta-large" ng-model="sprinter.details.description">{{sprinter.details.description}}</textarea>
+			    			</p>
+			    		</div>
+			    	</div>
+			    	
+			    	<div class="row edit">
+			    		<div class="col-xs-12 col-md-9 edit-info">You are in <strong>Edition</strong> mode.</div>
+			    		<div class="col-xs-12 col-md-3 col-nopadd">
+			    			<span class="btn btn-success" ng-click="saveDetails(sprinter.id)">Save changes</span>
+			    			<span class="btn btn-danger" style="margin-right: 15px;" ng-click="cancel(sprinter.id)">Cancel</span>
+			    		</div>
+			    	</div>
+			    </div>
+			    <!-- / Sprinter details (EDIT) -->
+			    	
+		    </accordion-group>
+		</accordion>
+		<!-- / Sprinters list -->
+		
+	</div>
+
+</div>

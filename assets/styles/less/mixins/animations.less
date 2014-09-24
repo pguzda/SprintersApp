@@ -1,0 +1,10 @@
+/* Animations LESS File
+ * ----------------------------- */
+ 
+.transition(@properties, @delay, @type) {
+	-webkit-transition: @properties @delay @type; 
+	-moz-transition:    @properties @delay @type;
+	-ms-transition:     @properties @delay @type;
+	-o-transition:      @properties @delay @type;
+	transition:         @properties @delay @type;
+}
